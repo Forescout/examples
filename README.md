@@ -2,8 +2,6 @@
 
 This repository contains examples of working code that interact with the Forescout Platform.
 
-The examples are organized into categories and common usage examples, but each is independent and self contained.  You can analyze the examples provided to get a better understanding of how a particular feature works, or use them as a starting point for your own project.
+The examples are organized into categories and common usage, but each is independent and self contained.  You can analyze the examples provided to get a better understanding of how a particular feature works, or use them as a starting point for your own project.
 
 For complete documentation, please visit [https://updates.forescout.com/](https://updates.forescout.com/)
-
-

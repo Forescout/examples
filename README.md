@@ -1,3 +1,9 @@
-# eyeSight Web API
+# Forescout Examples
 
-The Forescout eyeExtend Connect Module: Web API Plugin lets external entities communicate with the Forescout platform using simple, yet powerful web service requests based on HTTP interaction
+This repository contains examples of working code that interact with the Forescout Platform.
+
+The examples are organized into categories and common usage examples, but each is independent and self contained.  You can analyze the examples provided to get a better understanding of how a particular feature works, or use them as a starting point for your own project.
+
+For complete documentation, please visit [https://updates.forescout.com/](https://updates.forescout.com/)
+
+

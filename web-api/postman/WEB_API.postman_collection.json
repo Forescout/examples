@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "639c82ae-9054-4c6b-8a99-afac584b545e",
+		"name": "WEB_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Get Web Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4a9052f7-852d-4e54-b3e9-6512d8c96e6e",
+								"exec": [
+									"//var jsonData = JSON.parse(responseBody);",
+									"//console.log(responseBody);",
+									"postman.setEnvironmentVariable(\"OIM_TOKEN\", responseBody);",
+									"pm.variables.set(\"OIM_TOKEN\", responseBody);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ZnNfd2ViYXBpOldlbGNvbWUx",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://10.0.1.15/api/login/?username={{Username}}&password={{Password}}",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"1",
+								"15"
+							],
+							"path": [
+								"api",
+								"login",
+								""
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{Username}}"
+								},
+								{
+									"key": "password",
+									"value": "{{Password}}"
+								}
+							]
+						},
+						"description": "Get Token"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "QUERY",
+			"item": [
+				{
+					"name": "All Policies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{OIM_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.0.1.15/api/policies",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"1",
+								"15"
+							],
+							"path": [
+								"api",
+								"policies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{OIM_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.0.1.15/api/hosts",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"1",
+								"15"
+							],
+							"path": [
+								"api",
+								"hosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts Matching Policy Rule",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{OIM_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.0.1.15/api/hosts/?matchRuleId=1888088576231977382",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"1",
+								"15"
+							],
+							"path": [
+								"api",
+								"hosts",
+								""
+							],
+							"query": [
+								{
+									"key": "matchRuleId",
+									"value": "1888088576231977382"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hostfields",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{OIM_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.0.1.15/api/hostfields/",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"1",
+								"15"
+							],
+							"path": [
+								"api",
+								"hostfields",
+								""
+							]
+						},
+						"description": "HostFields"
+					},
+					"response": []
+				},
+				{
+					"name": "Host by IP",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{OIM_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://10.0.1.15/api/hosts/ip/10.0.1.20",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"1",
+								"15"
+							],
+							"path": [
+								"api",
+								"hosts",
+								"ip",
+								"10.0.1.20"
+							]
+						},
+						"description": "Get Hosts / Endpoint list"
+					},
+					"response": []
+				},
+				{
+					"name": "Hosts matching a property",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{OIM_TOKEN}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "https://10.0.1.15/api/hosts/?va_netfunc=Windows",
+							"protocol": "https",
+							"host": [
+								"10",
+								"0",
+								"1",
+								"15"
+							],
+							"path": [
+								"api",
+								"hosts",
+								""
+							],
+							"query": [
+								{
+									"key": "va_netfunc",
+									"value": "Windows"
+								}
+							]
+						},
+						"description": "Get Hosts / Endpoint list"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "10abfae3-6035-486c-b0bb-79c9f4617d43",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4766ad0a-0059-4159-9d26-396dbcaf5af7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f6ea5e93-773b-4f21-9c45-3f7e860553f4",
+			"key": "OIM_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmc193ZWJhcGnqubbwlb-X6r645p6d5K2C7YyK4qqX462zxpTitInNg-q8neuuoOOLrO-MhuimvOemjOy2mOimjeCmuOWTku2AmuS7nO-Gpeqkh-KSl-yJk-OLieSysOuXpOqTpumsv-GhhuivgOGxo-i3g-GlkeK-o-W3peaklO6-quGAu-q1nu6Tt--Lk-Olu-qBivCplbnlnZfrhbjwlpSS6aSX5Y-676G1zpnqrY_tjLXokIfjpa7pubHmuIsiLCJleHAiOjE1MTU3OTE4NDkyMjJ9.pKDeR6XX7QnRueuNv1l05fapjOAF4CPoUUO-QmuEeqA",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"id": "73a69aae-c751-4f02-9405-e8926e6623c8",
+			"key": "Username",
+			"value": "fscout",
+			"type": "string"
+		},
+		{
+			"id": "876e364a-8cee-4c7c-beb0-0d4664c0b568",
+			"key": "Password",
+			"value": "4Scout123",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

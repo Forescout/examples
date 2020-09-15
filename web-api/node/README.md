@@ -1,5 +1,4 @@
 # High level node.js interface to eyeSight
---
 
 Provided as a working example.
 

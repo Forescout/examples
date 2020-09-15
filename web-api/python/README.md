@@ -1,5 +1,4 @@
 # High level python interface to eyeSight
---
 
 Provided as a working example.
 

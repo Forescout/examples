@@ -1,0 +1,28 @@
+# Decode a jwt
+import jwt,json
+import time, calendar
+
+access_token = 'eyJraWQiOiJOTk1HZ19BUFNLeHU5N0l2dXRTNjRZdk5VTDU3cl8zRFpSV0xzLVA2MmV3IiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkdQNW5FSmY1MkV4WXhESmg2M1Z1ZmhpZ2NtdnNWWXBicGdua19iUDY2Rm8iLCJpc3MiOiJodHRwczovL2Rldi0xNzE3MTMub2t0YS5jb20vb2F1dGgyL2RlZmF1bHQiLCJhdWQiOiJhcGk6Ly9kZWZhdWx0IiwiaWF0IjoxNTkyNTExNTczLCJleHAiOjE1OTI1MTUxNzMsImNpZCI6IjBvYWZkd2FweVVlb0o2ZHZVNHg2IiwidWlkIjoiMDB1ZjNxZml3b1ZNWTQ4d2Y0eDYiLCJzY3AiOlsicHJvZmlsZSIsIm9wZW5pZCIsImVtYWlsIl0sInN1YiI6ImphY2tzb25wMjAwOEBnbWFpbC5jb20ifQ.Q7PXVT165y0HgWcnRnmZP5eWSdJf6DvJXddFbvCLi9iOmXJhcGOQpfrCg0WGv-G2nx2EC4cEGoxgVM-nDSi-MDQK2FMejSUhSahL08CzwLVCcBCCV2H51XQM3KqEx87hedSgtd5Ys5Wd2aY7trHb7yWxcNpzl9AWL5rnXjZMhr8qiziDfJkDvfoJRnoyrKtLEU5jH1KA93pp0nUI2i25Bdj8oR4_FmwK2OxBbXrsbt2CraRRxSQevxzzTk6Mnxm3hbA3WcP5sZAD-O-RWKs0VlfO7EsZZc8neA1MGEU_lISH7mQNJ16dzTX-TqiTrihuZhkbDlPgf7K6pFVWVicwHA'
+id_token = 'eyJraWQiOiJOTk1HZ19BUFNLeHU5N0l2dXRTNjRZdk5VTDU3cl8zRFpSV0xzLVA2MmV3IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIwMHVmM3FmaXdvVk1ZNDh3ZjR4NiIsIm5hbWUiOiJTdGV2ZW4gUG9sbG9jayIsImVtYWlsIjoiamFja3NvbnAyMDA4QGdtYWlsLmNvbSIsInZlciI6MSwiaXNzIjoiaHR0cHM6Ly9kZXYtMTcxNzEzLm9rdGEuY29tL29hdXRoMi9kZWZhdWx0IiwiYXVkIjoiMG9hZmR3YXB5VWVvSjZkdlU0eDYiLCJpYXQiOjE1OTI1MTY2NzgsImV4cCI6MTU5MjUyMDI3OCwianRpIjoiSUQua2pDM2RGdnZ0YmVtSWRDYU0zNjlWV2FGcnBuQm9UQ004bHBHQUZHaDNEWSIsImFtciI6WyJwd2QiXSwiaWRwIjoiMDBvZjBzb29uNkNQSWpPNjA0eDYiLCJub25jZSI6Ijc3NjVjYmEwLWE3MjctNDMwOC1iZjdmLWUzYTA2NDMwN2JlMCIsInByZWZlcnJlZF91c2VybmFtZSI6ImphY2tzb25wMjAwOEBnbWFpbC5jb20iLCJhdXRoX3RpbWUiOjE1OTI1MTY2NzgsImF0X2hhc2giOiIwZEIxVTVjaFdDRFd1Nm5VQXExSDZBIn0.GTUaWQVQLDy8PhgmrLuMXv1YFoK1wfUUHJHEwXhvh7IdX4Zlzi6piHFqvX4RyraBjNrVHjZOgbV9a4QAL9wz_IFL5496pmB4t8euroZEoPOWKXD0wYLRQIgMuRL1QxIwNx8B9FLrHLtDbTQM4gXjLv4CuWkUPFw-ZTwIS4J_Ika_v6VHlVLvtOFI8kHSiygclLDHFyC-khu4zbLNxlkd0wdtL2LcjIRbGZr3bROfD9eJYeSR8P2X9QhyvuNjzcnWxMPaZJ1OTNH2REFWyVS47pXx49QK9IzI4k-To1l9k1AZnmpZY5ckAQM-EO8L91SIr0_Y0J8Fygs2Mfbu0MSthg'
+
+# decode access token
+token = jwt.decode(access_token, verify=False)
+print("==== access token ====")
+tokj = json.dumps(token)    #if you need json
+for key in token:
+    print(key, '=', token[key])
+
+# decode id token
+token = jwt.decode(id_token, verify=False)
+print("==== id token ====")
+tokj = json.dumps(token)    #if you need json
+for key in token:
+    print(key, '=', token[key])
+
+# check expiration in the token
+exp = token['exp']
+now = calendar.timegm(time.gmtime())
+if (exp < now):
+    print("Token is expired!")
+else:
+    print("Token is good.")

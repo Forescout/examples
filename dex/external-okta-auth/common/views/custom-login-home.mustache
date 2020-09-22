@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{>head}}
+  </head>
+  <body id="samples">
+
+    {{>menu}}
+
+    <div id="content" class="ui padded grid relaxed">
+      <div id="doc" class="column eight wide">
+        <div class="doc-overview">
+
+          <h2 class="ui dividing header" data-se="overview-doc-header">
+            <div><img src="../assets/fish.jpg" alt="Big Fish"></div>
+            Big Fish Enterprises Network Login
+          </h2>
+
+          {{^isLoggedIn}}
+            <p>Hello!</p>
+            <p>To Access the Big Fish Network, you must login with your OKTA credentials below.  Note: Your server configuration is listed on the right.</p>
+            </p>
+
+          {{/isLoggedIn}}
+
+          {{#isLoggedIn}}
+            <p>Welcome back, {{userinfo.name}}!</p>
+            <p>You have successfully authenticated against to Big Fish Enterprises and may now access the network.  
+            <p></p>
+          {{/isLoggedIn}}
+
+          {{^isLoggedIn}}
+            <form method="get" action="/login">
+              <button id="login-button" class="ui primary button" type="submit">Log In</button>
+            </form>
+          {{/isLoggedIn}}
+        </div>
+      </div>
+
+      {{>server-config}}
+
+    </div>
+  </body>
+</html>

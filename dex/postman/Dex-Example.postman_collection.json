@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "7de76f28-f6b1-4d25-b372-0df8d734737d",
+		"name": "Dex-Example",
+		"description": "Exercise the Mythical 3rd Party Security Product (for eyeExtend Connect Training)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send Data to M3SP",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNTc5MzA3MDA5LCJleHAiOjE2MTA4NjQ2MDl9.pit_IN-oTM-Cuq4rjiidzZX9f09VsI3mMqQDBI3dbgw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjaGVjayI6dHJ1ZSwiaWF0IjoxNTc5MjIzODc2LCJleHAiOjE1NzkyMjc0NzZ9.ITxYfogSFN6nYDrFElZxVsmpWVnJ76PGzaLr5SPZ_Tw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \"mac\": \"c4b301cf8275\",\n      \"sha256\": \"8a87a1261603af4d976faa57e49ebdd8fd8317e9dd13bd36ff2599d1031f53ce\",\n      \"filetype\": \"Win32 EXE\",\n      \"filesize\": \"1.84 MB (1930240 bytes)\",\n      \"target_machine\": \"Intel 386 or later processors and compatible processors\",\n      \"malware_name\": \"Bluekeep\"\n}"
+				},
+				"url": {
+					"raw": "https://m3sp.lab.forescoutuniversity.com/api/senddata/",
+					"protocol": "https",
+					"host": [
+						"m3sp",
+						"lab",
+						"forescoutuniversity",
+						"com"
+					],
+					"path": [
+						"api",
+						"senddata",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4f8b206c-5f5f-4032-84fb-ba7afe631636",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bf89453a-287c-4e20-9e0e-fb35c1f3f295",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

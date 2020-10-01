@@ -1,0 +1,20 @@
+ Group (\w+)
+ User (\w+)
+ IP (\d+\.\d+\.\d+\.\d+)
+ IPv4 Address (\d+\.\d+\.\d+\.\d+)
+
+
+# Full regex for https://regex101.com/
+Group (\w+) User (\w+) IP (\d+\.\d+\.\d+\.\d+) IPv4 Address (\d+\.\d+\.\d+\.\d+)
+
+Source Commands:
+fstool syslog set_property config.type1.option.m3sp_admission 'M3SP Admission Event'
+fstool syslog set_property config.type2.option.m3sp_admission 'M3SP Admission Event'
+fstool syslog set_property config.type3.option.m3sp_admission 'M3SP Admission Event'
+
+Template Commands:
+fstool syslog set_property template.m3sp_syslog_template.type "m3sp_admission"
+fstool syslog set_property template.m3sp_syslog_template.regexp "Group (\w+) User (\w+) IP (\d+\.\d+\.\d+\.\d+) IPv4 Address (\d+\.\d+\.\d+\.\d+)"
+fstool syslog set_property template.m3sp_syslog_template.properties "\$fsapi_m3sp_user_group,\$user,\$fsapi_m3sp_ip,\$ip"
+fstool syslog set_property template.m3sp_syslog_template.set_true "\$online"
+fstool syslog restart

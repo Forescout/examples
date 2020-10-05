@@ -28,7 +28,7 @@ import urllib.request
 
 # Needs to be manually set
 CTIP = "10.80.100.149"  # CounterACT IP
-CTPWSTRING = "username=spollock&password=4Scout123"  # Creds for WS-API
+CTPWSTRING = "username={username}&password=4Scout123"  # Creds for WS-API
 
 base_url = "https://" + CTIP + "/api"
 headers = {

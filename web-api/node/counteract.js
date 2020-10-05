@@ -26,7 +26,7 @@ var LosslessJSON = require('lossless-json')
 var https = require('https')
 
 const CTIP = '10.80.100.149' // CounterACT IP
-const CTPWSTRING = 'username=spollock&password=4Scout123' // Creds for WS-API
+const CTPWSTRING = 'username={username}}&password=4Scout123' // Creds for WS-API
 
 var options = {
   hostname: CTIP,

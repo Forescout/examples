@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "e5d9f93f-bb16-4c9b-91d1-6782ae4e773d",
+		"name": "AdminAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Segment Manipulation",
+			"item": [
+				{
+					"name": "Show Segments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/segments",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"segments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Specific Segment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/segments",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"segments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Segments",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                                                        \"name\": \"Lab-Kit\",\r\n                                                        \"ranges\": [\r\n                                                            \"10.0.1.1-10.0.1.214\",\r\n                                                            \"10.0.2.2-10.0.2.253\",\r\n                                                            \"10.0.3.2-10.0.3.253\",\r\n                                                            \"10.0.4.2-10.0.4.253\",\r\n                                                            \"10.0.5.2-10.0.5.253\"\r\n                                                        ]\r\n                                                    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/segments",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"segments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Segment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"*root\",\r\n\t\"nodes\": [{\r\n\t\t\t\"name\": \"Nakatomi - In Scope\",\r\n\t\t\t\"ranges\": [\r\n\t\t\t\t\"10.0.0.1-10.0.255.255\"\r\n\t\t\t],\r\n\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\"name\": \"Nakatomi Trading Corp.\",\r\n\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\"name\": \"Campus Sites\",\r\n\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"APAC\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\"name\": \"Singapore\",\r\n\t\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"61-Mgmt\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.61.0-10.0.61.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"62-Production\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.62.0-10.0.62.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"63-Guest\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.63.0-10.0.63.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"64-Facilities\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.64.0-10.0.64.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"65-IoT\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.65.0-10.0.65.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"66-DC\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.66.0-10.0.66.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t}]\r\n\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"Europe\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\"name\": \"London\",\r\n\t\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"31-Mgmt\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.31.0-10.0.31.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"32-Production\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.32.0-10.0.32.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"33-Guest\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.33.0-10.0.33.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"34-Facilities\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.34.0-10.0.34.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"35-IoT\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.35.0-10.0.35.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"36-DC\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.36.0-10.0.36.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t}]\r\n\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"United States\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"HQ San Francisco\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"1-Mgmt\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.11.0-10.0.11.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"2-Production\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.12.0-10.0.12.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"3-Guest\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.13.0-10.0.13.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"4-Facilities\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.14.0-10.0.14.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"5-IoT\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.15.0-10.0.15.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"6-DC\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.16.0-10.0.16.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"Lab-Kit\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.1.1-10.0.1.214\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.2.2-10.0.2.253\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.3.2-10.0.3.253\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.4.2-10.0.4.253\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.5.2-10.0.5.253\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"San Diego\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"SDClients\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.198.1.1-10.198.1.254\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.198.2.1-10.198.2.254\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t}]\r\n\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Data Center & Other Areas\",\r\n\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"AWS\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"AWS - Ohio\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"172.16.101.1-172.16.101.254\"\r\n\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"AWS - Oregon\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"172.16.100.1-172.16.100.254\"\r\n\t\t\t\t\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\t\t\t\t\"description\": \"SE Demo Instance in Oregon\"\r\n\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"Azure\",\r\n\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\"172.27.12.0-172.27.15.255\",\r\n\t\t\t\t\t\t\t\t\t\t\"172.27.20.0-172.27.23.255\"\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Medical Devices\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"192.168.155.0-192.168.155.255\"\r\n\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\"nodes\": [{\r\n\t\t\t\t\t\t\t\t\"name\": \"Main Hospital Site\"\r\n\t\t\t\t\t\t\t}]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Operational Technology\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"10.0.100.1-10.0.100.255\",\r\n\t\t\t\t\t\t\t\t\"10.0.101.1-10.255.255.255\",\r\n\t\t\t\t\t\t\t\t\"74.209.0.0-74.209.255.255\",\r\n\t\t\t\t\t\t\t\t\"137.48.0.0-137.48.255.255\",\r\n\t\t\t\t\t\t\t\t\"172.16.0.0-172.16.99.255\",\r\n\t\t\t\t\t\t\t\t\"172.16.102.0-172.17.255.255\",\r\n\t\t\t\t\t\t\t\t\"172.19.1.1-172.26.11.255\",\r\n\t\t\t\t\t\t\t\t\"172.27.16.0-172.27.17.255\",\r\n\t\t\t\t\t\t\t\t\"172.30.0.0-172.31.255.255\",\r\n\t\t\t\t\t\t\t\t\"192.168.0.0-192.168.154.255\",\r\n\t\t\t\t\t\t\t\t\"192.168.156.0-192.168.255.255\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Remote Offices\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"10.0.91.0-10.0.91.255\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"VPN\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"10.0.95.0-10.0.95.255\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"name\": \"pcap\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"Out Of Scope\"\r\n\t\t}\r\n\t]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/segments",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"segments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Segment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"*root\",\r\n\t\"nodes\": [\r\n\t\t{\r\n\t\t\t\"name\": \"Nakatomi - In Scope\",\r\n\t\t\t\"ranges\": [\r\n\t\t\t\t\"10.0.0.1-10.0.255.255\"\r\n\t\t\t],\r\n\t\t\t\"nodes\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"name\": \"Nakatomi Trading Corp.\",\r\n\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Campus Sites\",\r\n\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"APAC\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"Singapore\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"61-Mgmt\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.61.0-10.0.61.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"62-Production\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.62.0-10.0.62.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"63-Guest\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.63.0-10.0.63.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"64-Facilities\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.64.0-10.0.64.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"65-IoT\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.65.0-10.0.65.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"66-DC\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.66.0-10.0.66.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"Europe\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"London\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"31-Mgmt\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.31.0-10.0.31.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"32-Production\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.32.0-10.0.32.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"33-Guest\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.33.0-10.0.33.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"34-Facilities\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.34.0-10.0.34.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"35-IoT\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.35.0-10.0.35.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"36-DC\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.36.0-10.0.36.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"United States\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"HQ San Francisco\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"1-Mgmt\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.11.0-10.0.11.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"2-Production\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.12.0-10.0.12.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"3-Guest\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.13.0-10.0.13.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"4-Facilities\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.14.0-10.0.14.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"5-IoT\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.15.0-10.0.15.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"6-DC\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.16.0-10.0.16.255\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"name\": \"Lab-Kit\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.1.1-10.0.1.214\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.2.2-10.0.2.253\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.3.2-10.0.3.253\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.4.2-10.0.4.253\",\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\"10.0.5.2-10.0.5.253\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Data Center & Other Areas\",\r\n\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"AWS\",\r\n\t\t\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"AWS - Ohio\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"172.16.101.1-172.16.101.254\"\r\n\t\t\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\t\t\"name\": \"AWS - Oregon\",\r\n\t\t\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\t\t\"172.16.100.1-172.16.100.254\"\r\n\t\t\t\t\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\t\t\t\t\"description\": \"SE Demo Instance in Oregon\"\r\n\t\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"Azure\",\r\n\t\t\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\t\t\"172.27.12.0-172.27.15.255\",\r\n\t\t\t\t\t\t\t\t\t\t\"172.27.20.0-172.27.23.255\"\r\n\t\t\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Medical Devices\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"192.168.155.0-192.168.155.255\"\r\n\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\"nodes\": [\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"name\": \"Main Hospital Site\"\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Operational Technology\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"10.0.100.1-10.0.100.255\",\r\n\t\t\t\t\t\t\t\t\"10.0.101.1-10.255.255.255\",\r\n\t\t\t\t\t\t\t\t\"74.209.0.0-74.209.255.255\",\r\n\t\t\t\t\t\t\t\t\"137.48.0.0-137.48.255.255\",\r\n\t\t\t\t\t\t\t\t\"172.16.0.0-172.16.99.255\",\r\n\t\t\t\t\t\t\t\t\"172.16.102.0-172.17.255.255\",\r\n\t\t\t\t\t\t\t\t\"172.19.1.1-172.26.11.255\",\r\n\t\t\t\t\t\t\t\t\"172.27.16.0-172.27.17.255\",\r\n\t\t\t\t\t\t\t\t\"172.30.0.0-172.31.255.255\",\r\n\t\t\t\t\t\t\t\t\"192.168.0.0-192.168.154.255\",\r\n\t\t\t\t\t\t\t\t\"192.168.156.0-192.168.255.255\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"Remote Offices\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"10.0.91.0-10.0.91.255\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"name\": \"VPN\",\r\n\t\t\t\t\t\t\t\"ranges\": [\r\n\t\t\t\t\t\t\t\t\"10.0.95.0-10.0.95.255\"\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\t\"name\": \"pcap\"\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"Out Of Scope\"\r\n\t\t}\r\n\t]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/segments",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"segments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group Manipulation",
+			"item": [
+				{
+					"name": "Show Ignored IP Group Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/groups/ignored-ips",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"groups",
+								"ignored-ips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Passive Learning Members",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/groups/passive",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"groups",
+								"passive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Ignore IP Ranges",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"key\": \"172.22.0.0-172.22.255.255\",\r\n    \"comment\": \"First ignored IP range to add\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.23.0/24\",\r\n    \"comment\": \"Second ignored IP range to add\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.24.25\",\r\n    \"comment\": \"Third ignored IP range to add\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/groups/ignored-ips",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"groups",
+								"ignored-ips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Passive Learning Memebers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"key\": \"172.22.0.0-172.22.255.255\",\r\n    \"comment\": \"First ignored IP range to add\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.23.0/24\",\r\n    \"comment\": \"Second ignored IP range to add\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.24.25\",\r\n    \"comment\": \"Third ignored IP range to add\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/groups/passive",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"groups",
+								"passive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Ignore IP Ranges",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"key\": \"172.22.0.0-172.22.255.255\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.23.0/24\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.24.25\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/groups/ignored-ips",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"groups",
+								"ignored-ips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Passive Learning Members",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"key\": \"172.22.0.0-172.22.255.255\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.23.0/24\"\r\n  },\r\n  {\r\n    \"key\": \"172.22.24.25\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/adminapi/groups/passive",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"adminapi",
+								"groups",
+								"passive"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Switch Plugin",
+			"item": [
+				{
+					"name": "Get Specific Switch",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://{{ctaddress}}/switch/api/v1/switches?managementAddress=10.0.1.1",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"switch",
+								"api",
+								"v1",
+								"switches"
+							],
+							"query": [
+								{
+									"key": "managementAddress",
+									"value": "10.0.1.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ctaddress}}/switch/api/v1/healthCheck",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"switch",
+								"api",
+								"v1",
+								"healthCheck"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Switch by Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"switchToAddList\": [\r\n    {\r\n      \"comment\": \"this is a test to see if api works\",\r\n      \"connectingAppliance\": \"10.0.1.15\",\r\n      \"managementAddress\": \"10.0.1.99\",\r\n      \"profileName\": \"APITest\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/switch/api/v1/switches",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"switch",
+								"api",
+								"v1",
+								"switches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Switch",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"switchToUpdateList\": [\r\n    {\r\n      \"comment\": \"This is an update test\",\r\n      \"managementAddress\": \"10.0.1.99\",\r\n      \"profileName\": \"APITest\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/switch/api/v1/switches",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"switch",
+								"api",
+								"v1",
+								"switches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Switch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"switchesToDeleteManagementAddresses\": [\r\n    \"10.0.1.99\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{ctaddress}}/switch/api/v1/switches",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"switch",
+								"api",
+								"v1",
+								"switches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Switch Summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{ctaddress}}/switch/api/v1/switches/summary",
+							"protocol": "https",
+							"host": [
+								"{{ctaddress}}"
+							],
+							"path": [
+								"switch",
+								"api",
+								"v1",
+								"switches",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Example Only - oAuth Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "4Scout123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "fs-oauth-client",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://10.0.1.15/fsum/oauth2.0/token",
+					"protocol": "https",
+					"host": [
+						"10",
+						"0",
+						"1",
+						"15"
+					],
+					"path": [
+						"fsum",
+						"oauth2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.sendRequest({",
+					"    url: \"https://\"+pm.collectionVariables.get(\"ctaddress\")+\"/fsum/oauth2.0/token\",",
+					"",
+					"    method: 'POST',",
+					"    header: {",
+					"        'content-type': 'application/x-www-form-urlencoded'",
+					"    },",
+					"    body: {",
+					"        mode: 'urlencoded',",
+					"        urlencoded: [",
+					"            {key: 'username', value: `${pm.collectionVariables.get(\"username\")}`},",
+					"            {key: 'password', value: `${pm.collectionVariables.get(\"password\")}`},",
+					"            {key: 'grant_type', value: 'password'},",
+					"            {key: 'client_id', value: 'fs-oauth-client'}",
+					"        ] ",
+					"    }",
+					"}, (err, res) => pm.collectionVariables.set(\"token\", res.json().access_token));",
+					"",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ctaddress",
+			"value": "10.0.1.15"
+		},
+		{
+			"key": "username",
+			"value": "admin"
+		},
+		{
+			"key": "password",
+			"value": "4Scout123"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
